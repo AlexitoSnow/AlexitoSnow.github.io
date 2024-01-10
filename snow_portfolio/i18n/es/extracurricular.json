@@ -1,0 +1,20 @@
+{
+    "act1": {
+        "name": "<El_Hackathon> Vol. I",
+        "institution": "Guayaquil Tech",
+        "date": "{{startDate}} a {{endDate}}",
+        "description": "Participación en la competencia de programación en un desafío propuesto por la empresa Publifyer, contribuyendo al desarrollo de la API de nuestro proyecto, misma que consumía los servicios de OpenAI."
+    },
+    "act2": {
+        "name": "NASA Space Apps Challenge Guayaquil 2023",
+        "institution": "CORPCITI",
+        "date": "{{startDate}} a {{endDate}}",
+        "description": "Líder y participante en la competencia de programación local Space Apps en el desafío “Planetary Tourism Office”, diseñando la interfaz frontend."
+    },
+    "act3": {
+        "name": "Concurso IOT&AI Latinoamérica 2023",
+        "institution": "IEEE TEMS",
+        "date": "{{startDate}} a {{endDate}}",
+        "description": "Diseño de la interfaz frontend para el proyecto “CrimeBuster”, el cual consiste en un sistema de detección de crímenes en tiempo real, utilizando inteligencia artificial y aprendizaje automático."
+    }
+}

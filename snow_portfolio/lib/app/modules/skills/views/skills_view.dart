@@ -1,37 +1,36 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'package:gap/gap.dart';
 
 import 'package:get/get.dart';
 import 'package:lottie/lottie.dart';
+import 'package:snow_portfolio/app/utils/constants.dart';
 
 import '../../../widgets/activity_list.dart';
+import '../../../widgets/responsive_flex.dart';
 import '../controllers/skills_controller.dart';
 
 class SkillsView extends GetView<SkillsController> {
   const SkillsView({Key? key}) : super(key: key);
   @override
   Widget build(BuildContext context) {
+    isPhone = context.width <= 800;
     return Stack(
       children: [
         background,
-        Row(
-          mainAxisAlignment: MainAxisAlignment.center,
-          crossAxisAlignment: CrossAxisAlignment.center,
+        ResponsiveFlex(
           children: [
             education,
             Expanded(
               flex: 4,
               child: ListView(
                 children: [
-                  Gap(Get.height * 0.05),
                   sectionOf(
-                    'Soft Skills',
+                    controller.softSkillsHeader,
                     FontAwesomeIcons.lightbulb,
                     controller.softSkills,
                   ),
                   sectionOf(
-                    'Languages',
+                    controller.languagesHeader,
                     FontAwesomeIcons.language,
                     controller.languages,
                   ),
@@ -46,7 +45,7 @@ class SkillsView extends GetView<SkillsController> {
 
   ExpansionTile sectionOf(String title, IconData icon, List<String> list) {
     return ExpansionTile(
-      initiallyExpanded: true,
+      initiallyExpanded: !isPhone,
       title: Text(title),
       trailing: Icon(icon),
       children: [
@@ -63,17 +62,16 @@ class SkillsView extends GetView<SkillsController> {
       flex: 6,
       child: Column(
         children: [
-          Gap(Get.height * 0.1),
-          const ListTile(
+          ListTile(
             title: Text(
-              'Education',
+              controller.educationHeader,
             ),
-            trailing: Icon(FontAwesomeIcons.graduationCap),
+            trailing: const Icon(FontAwesomeIcons.graduationCap),
           ),
           Expanded(
             child: Padding(
               padding: const EdgeInsets.only(left: 8.0),
-              child: ActivityList(controller.educationList),
+              child: ActivityList(controller.education),
             ),
           ),
         ],

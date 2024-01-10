@@ -27,6 +27,7 @@ class ProjectImageView extends StatelessWidget {
           constraints: const BoxConstraints(
             maxWidth: 600,
             maxHeight: 450,
+            minHeight: 200,
           ),
           child: Image.asset(
             imagePath,

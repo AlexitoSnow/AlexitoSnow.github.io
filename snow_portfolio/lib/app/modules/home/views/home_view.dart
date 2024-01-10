@@ -2,21 +2,24 @@ import 'package:flutter/material.dart';
 import 'package:url_launcher/url_launcher.dart';
 import 'package:get/get.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import '../../../../generated/translations.g.dart';
 import '../controllers/home_controller.dart';
-import 'top_bar.dart';
+import 'responsive_bar.dart';
 
 class HomeView extends GetView<HomeController> {
   const HomeView({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
+    final isPhone = context.width <= 800;
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Get.theme.colorScheme.primary.withOpacity(0.5),
-        actions: social,
-        title: const TopBar(),
+        actions: actions,
+        title: !isPhone ? ResponsiveBar(isPhone) : null,
+        centerTitle: true,
       ),
-      extendBodyBehindAppBar: true,
+      drawer: isPhone ? ResponsiveBar(isPhone) : null,
       body: PageView.builder(
         restorationId: 'pages',
         pageSnapping: false,
@@ -31,12 +34,38 @@ class HomeView extends GetView<HomeController> {
     );
   }
 
-  List<Widget> get social {
+  List<Widget> get actions {
     return [
       socialButton(
           'https://www.github.com/AlexitoSnow/', FontAwesomeIcons.squareGithub),
       socialButton('https://www.linkedin.com/in/alexander-nieves/',
           FontAwesomeIcons.linkedin),
+      Obx(
+        () => IconButton(
+          onPressed: () {
+            controller.changeTheme();
+          },
+          icon: Icon(controller.isDark ? Icons.light_mode : Icons.dark_mode),
+        ),
+      ),
+      PopupMenuButton<AppLocale>(
+        onSelected: (value) {
+          controller.changeLocale(value);
+        },
+        icon: const Icon(Icons.translate),
+        itemBuilder: (_) {
+          return [
+            PopupMenuItem(
+              value: controller.en,
+              child: const Text("English"),
+            ),
+            PopupMenuItem(
+              value: controller.es,
+              child: const Text("Español"),
+            ),
+          ];
+        },
+      ),
     ];
   }
 

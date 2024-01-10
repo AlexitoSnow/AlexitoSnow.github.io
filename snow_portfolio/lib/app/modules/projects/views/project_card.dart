@@ -4,9 +4,10 @@ import 'package:get/get.dart';
 import 'package:url_launcher/url_launcher.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import '../../../models/project_model.dart';
+import '../../../utils/constants.dart';
 import '../../../widgets/dev_icons_list.dart';
+import '../../../widgets/responsive_flex.dart';
 import 'project_image_view.dart';
-
 
 class ProjectCard extends GetView {
   final double rotationAngle;
@@ -16,30 +17,38 @@ class ProjectCard extends GetView {
 
   @override
   Widget build(BuildContext context) {
+    isPhone = context.width <= 800;
     return Card(
       elevation: 3,
       shadowColor: Get.theme.colorScheme.primary.withOpacity(0.5),
-      child: Row(
-        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-        children: [
-          Expanded(
-            flex: 4,
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Expanded(
-                  flex: 9,
-                  child: project(),
-                ),
-                DevIconsList(iconList: projectModel.technologies!),
-                github(),
-              ],
+      child: SingleChildScrollView(
+        child: ResponsiveFlex(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: [
+            isPhone
+                ? infoSection()
+                : Expanded(
+                    flex: 4,
+                    child: infoSection(),
+                  ),
+            ProjectImageView(
+              rotationAngle: rotationAngle,
+              imagePath: projectModel.image!,
             ),
-          ),
-          ProjectImageView(
-              rotationAngle: rotationAngle, imagePath: projectModel.image!,),
-        ],
+          ],
+        ),
       ),
+    );
+  }
+
+  Column infoSection() {
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        project(),
+        DevIconsList(iconList: projectModel.technologies!),
+        github(),
+      ],
     );
   }
 
@@ -57,9 +66,9 @@ class ProjectCard extends GetView {
           ),
           AutoSizeText(
             projectModel.description!,
-            minFontSize: 25,
+            minFontSize: isPhone ? 15 : 20,
             maxFontSize: 30,
-            maxLines: 5,
+            maxLines: null,
           ),
         ],
       ),

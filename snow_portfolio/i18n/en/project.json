@@ -1,0 +1,71 @@
+{
+    "snowNotepad": {
+        "title": "Snow Notepad",
+        "description": "A mobile notepad developed in Flutter, using SQLite for managing user notes directly on their device and offline.",
+        "image": "{{imagePath}}",
+        "repository": "{{repository}}",
+        "technologies": [
+            "flutter",
+            "dart"
+        ]
+    },
+    "crimeBuster": {
+        "title": "CrimeBuster",
+        "description": "App for crime detection project in the IOT&AI Latin America 2023 competition, responsible for the graphical interface design.",
+        "image": "{{imagePath}}",
+        "repository": "{{repository}}",
+        "technologies": [
+            "flutter",
+            "dart"
+        ]
+    },
+    "polaris": {
+        "title": "Polaris Project",
+        "description": "A website aimed at educating internet users about planets, with an interface that allows emulating a travel itinerary, project for the NASA Space Apps 2023 competition.",
+        "image": "{{imagePath}}",
+        "repository": "{{repository}}",
+        "technologies": [
+            "flutter",
+            "dart"
+        ]
+    },
+    "notepadWeb": {
+        "title": "Notepad: Web App",
+        "description": "A web notepad developed in Flutter, making requests to a personal API to implement all CRUD methods towards a MySQL database.",
+        "image": "{{imagePath}}",
+        "repository": "{{repository}}",
+        "technologies": [
+            "flutter",
+            "dart"
+        ]
+    },
+    "notepadAPI": {
+        "title": "Notepad: Rest API",
+        "description": "An API developed in Java Springboot to communicate the web notepad with a MySQL database.",
+        "image": "{{imagePath}}",
+        "repository": "{{repository}}",
+        "technologies": [
+            "java",
+            "springboot",
+            "mysql"
+        ]
+    },
+    "chasing30": {
+        "title": "Chasing 30",
+        "description": "Console game of a board that moves around to find the number 30 while the board gets shuffled at regular intervals, designed as a challenge for the PyWeekend ESPOL 2023 competition.",
+        "image": "{{imagePath}}",
+        "repository": "{{repository}}",
+        "technologies": [
+            "python"
+        ]
+    },
+    "snakeGame": {
+        "title": "Snake Game: Computer Society ESPOL Edition",
+        "description": "Collaborative project leader of the classic Snake game, adapted and customized to the ESPOL environment, for its exhibition at the anniversary of the IEEE ESPOL student branch in 2023.",
+        "image": "{{imagePath}}",
+        "repository": "{{repository}}",
+        "technologies": [
+            "java"
+        ]
+    }
+}

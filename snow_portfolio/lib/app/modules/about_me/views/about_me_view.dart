@@ -1,8 +1,10 @@
+import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
-import 'package:lottie/lottie.dart';
 import 'package:get/get.dart';
+import 'package:lottie/lottie.dart';
 import 'package:animated_text_kit/animated_text_kit.dart';
 import '../../../widgets/dev_icons_list.dart';
+import '../../../widgets/responsive_flex.dart';
 import '../controllers/about_me_controller.dart';
 import 'package:google_fonts/google_fonts.dart';
 
@@ -10,7 +12,8 @@ class AboutMeView extends GetView<AboutMeController> {
   const AboutMeView({Key? key}) : super(key: key);
   @override
   Widget build(BuildContext context) {
-    return Row(
+    isPhone = context.width <= 800;
+    return ResponsiveFlex(
       children: [
         Padding(
           padding: const EdgeInsets.only(left: 8.0),
@@ -39,14 +42,19 @@ class AboutMeView extends GetView<AboutMeController> {
     );
   }
 
-  Text get presentation {
-    return Text(
-      controller.presentation,
-      style: const TextStyle(
-        fontSize: 15,
-        fontWeight: FontWeight.bold,
+  Widget get presentation {
+    return SizedBox(
+      width: Get.width * (isPhone ? 0.8 : 0.5),
+      child: AutoSizeText(
+        key: Key(controller.presentation),
+        controller.presentation,
+        style: const TextStyle(
+          fontSize: 15,
+          fontWeight: FontWeight.bold,
+        ),
+        textAlign: TextAlign.start,
+        maxLines: null,
       ),
-      textAlign: TextAlign.start,
     );
   }
 
@@ -72,12 +80,13 @@ class AboutMeView extends GetView<AboutMeController> {
     );
   }
 
-  AnimatedTextKit get gretting {
+  Widget get gretting {
     return AnimatedTextKit(
+      key: Key(controller.gretting),
       isRepeatingAnimation: false,
       animatedTexts: [
         TypewriterAnimatedText(
-          controller.greeting,
+          controller.gretting,
           textStyle: GoogleFonts.inconsolata(
             textStyle: const TextStyle(
               fontSize: 20,
@@ -89,3 +98,5 @@ class AboutMeView extends GetView<AboutMeController> {
     );
   }
 }
+
+bool isPhone = false;

@@ -8,10 +8,12 @@ class ProjectsView extends GetView<ProjectsController> {
   const ProjectsView({Key? key}) : super(key: key);
   @override
   Widget build(BuildContext context) {
+    final isPhone = context.width <= 800;
     return Swiper(
       itemBuilder: (BuildContext context, int index) => ProjectCard(
         projectModel: controller.projectItems[index],
-        rotationAngle: index % 2 == 0 ? 0.2 : -0.2,
+        rotationAngle:
+            isPhone ? 0: (index % 2 == 0 ? 0.2 : -0.2),
       ),
       itemCount: controller.projectItems.length,
       layout: SwiperLayout.TINDER,
@@ -23,7 +25,9 @@ class ProjectsView extends GetView<ProjectsController> {
           color: Get.theme.colorScheme.secondary,
         ),
       ),
-      control: const SwiperControl(),
+      control: SwiperControl(
+        color: Get.theme.colorScheme.primary,
+      ),
     );
   }
 }

@@ -1,5 +1,6 @@
 import 'package:dev_icons/dev_icons.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
 class DevIconsList extends StatelessWidget {
   const DevIconsList({
@@ -11,18 +12,19 @@ class DevIconsList extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Row(
+    final isPhone = context.width <= 800;
+    return Wrap(
       children: List.generate(
         iconList.length,
         (index) => Tooltip(
           message: iconList[index],
           child: Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 8.0),
+            padding: const EdgeInsets.symmetric(horizontal: 8.0, vertical: 4.0),
             child: CircleAvatar(
-              maxRadius: 25,
+              maxRadius: isPhone ? 15 : 25,
               child: Icon(
                 tecnologiesMap[iconList[index]],
-                size: 35,
+                size: isPhone ? 15 : 35,
               ),
             ),
           ),
