@@ -10,7 +10,7 @@ dependencies:
   get: 4.6.6
   flutter: 
     sdk: flutter
-  lottie: ^2.7.0
+  lottie: ^3.0.0
   flutter_spinkit: ^5.2.0
   url_launcher: ^6.2.2
   card_swiper: ^3.0.1
@@ -24,11 +24,12 @@ dependencies:
     sdk: flutter
   slang: ^3.28.0
   slang_flutter: ^3.28.0
+  scrollable_positioned_list: ^0.3.8
 
 dev_dependencies: 
-  flutter_lints: ^2.0.0
+  flutter_lints: ^3.0.1
+  flutter_native_splash: ^2.0.2
   flutter_launcher_icons: ^0.13.1
-  flutter_native_splash: ^2.3.9
   flutter_test: 
     sdk: flutter
   build_runner: ^2.4.7
@@ -40,13 +41,18 @@ flutter:
     - assets/images/projects/
   uses-material-design: true
 
-flutter_launcher_icons: 
-  web: 
-    image_path: assets/icons/launch-icon.png
+# dart run flutter_launcher_icons:main
+flutter_launcher_icons:
+  image_path: "assets/icons/logo.png"
+  web:
     generate: true
 
-flutter_native_splash: 
-  color: '#212121'
-  image: assets/icons/splash-icon.png
+# Customize the parameters below, and run the following command in the terminal:
+# dart run flutter_native_splash:create
+flutter_native_splash:
   web: true
-
+  
+  color: "#ffffff"
+  image: assets/icons/splash-icon.png
+  # Dark mode
+  color_dark: "#131516"
