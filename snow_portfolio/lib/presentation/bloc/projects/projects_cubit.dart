@@ -11,10 +11,14 @@ class ProjectsCubit extends Cubit<ProjectsState> {
   ScrollController scrollController = ScrollController();
   List<Project> get projectItems => Project.projectItems;
   PageController pageController = PageController(keepPage: true);
-  int currentPage = 0;
 
   void onHover(int index, bool isHovering) {
     var hIndex = isHovering ? index : -1;
-    emit(ProjectsState(hoveringIndex: hIndex));
+    emit(ProjectsState(hoveringIndex: hIndex, currentPage: state.currentPage));
   }
+
+  void onPageChanged(int index) {
+    emit(ProjectsState(hoveringIndex: state.hoveringIndex, currentPage: index));
+  }
+
 }

@@ -44,13 +44,13 @@ class _TechnologiesViewState extends State<TechnologiesView>
 
   void _startAnimations() async {
     await Future.delayed(const Duration(seconds: 1));
-    _controllerLanguages.forward();
+    if (mounted) _controllerLanguages.forward();
     await Future.delayed(const Duration(seconds: 1));
-    _controllerFrameworks.forward();
+    if (mounted) _controllerFrameworks.forward();
     await Future.delayed(const Duration(seconds: 1));
-    _controllerDatabases.forward();
+    if (mounted) _controllerDatabases.forward();
     await Future.delayed(const Duration(seconds: 1));
-    _controllerTools.forward();
+    if (mounted) _controllerTools.forward();
   }
 
   @override

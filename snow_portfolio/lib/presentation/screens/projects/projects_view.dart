@@ -30,7 +30,7 @@ class ProjectsView extends StatelessWidget {
                         duration: const Duration(seconds: 1),
                         curve: Curves.easeInOutCubicEmphasized,
                       );
-                      controller.currentPage = index;
+                      controller.onPageChanged(index);
                     },
                     onHover: (isHovering) {
                       controller.onHover(index, isHovering);
@@ -41,7 +41,9 @@ class ProjectsView extends StatelessWidget {
                           duration: const Duration(seconds: 1),
                           curve: Curves.easeInOutCubicEmphasized,
                           width: context.width *
-                              (controller.currentPage == index ? 0.2 : 0.1),
+                              (controller.state.currentPage == index
+                                  ? 0.2
+                                  : 0.1),
                           height: context.width * 0.1,
                           child: Image.asset(
                             controller.projectItems[index].image!,
@@ -49,14 +51,16 @@ class ProjectsView extends StatelessWidget {
                           ),
                         ).paddingSymmetric(horizontal: 10),
                         Visibility(
-                          visible: controller.currentPage == index
+                          visible: controller.state.currentPage == index
                               ? true
                               : controller.state.hoveringIndex == index,
                           child: Container(
                             width: context.width *
-                                (controller.currentPage == index ? 0.2 : 0.1),
+                                (controller.state.currentPage == index
+                                    ? 0.2
+                                    : 0.1),
                             height: context.width * 0.1,
-                            color: (controller.currentPage == index
+                            color: (controller.state.currentPage == index
                                     ? mainColor
                                     : Colors.black)
                                 .withOpacity(0.5),

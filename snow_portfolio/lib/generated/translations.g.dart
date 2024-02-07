@@ -6,7 +6,7 @@
 /// Locales: 2
 /// Strings: 102 (51 per locale)
 ///
-/// Built on 2024-02-07 at 03:19 UTC
+/// Built on 2024-02-07 at 21:17 UTC
 
 // coverage:ignore-file
 // ignore_for_file: type=lint
@@ -163,7 +163,7 @@ class _TranslationsAboutEs {
 	// Translations
 	String get gretting => '¡Bienvenido, usuario desconocido!';
 	String get title => 'Desarrollador de Software';
-	String get presentation => 'Aspiro a ser una persona capaz de motivar, liderar y enseñar a los demás. Estoy interesado en el desarrollo backend y abierto a aprender de las distintas áreas en las que pueda especializarme. Me gusta involucrarme en actividades comunitarias y de aprendizaje diversificado. Además, en mis tiempos libres me dedico a desarrollar proyectos personales.';
+	String get presentation => 'Líder, inspirador, y mentor, son las cualidades que siempre trato de que vean en mí. Soy un estudiante entusiasta por las tecnologías de desarrollo multiplataforma, con enfoque a las plataformas móviles, y abierto a aprender de otras áreas de la tecnología. Me gusta involucrarme en actividades comunitarias y de aprendizaje diversificado. Persigo aprender un poco cada día, buscando oportunidades en todo lo que encuentre. Actualmente estoy enfocado en el Framework Flutter, reconociendo su valor como una tecnología con potencial para agilizar el desarrollo de aplicaciones.';
 }
 
 // Path: project
@@ -364,7 +364,7 @@ class _TranslationsAboutEn implements _TranslationsAboutEs {
 	// Translations
 	@override String get gretting => 'Welcome, unknown user!';
 	@override String get title => 'Software Developer';
-	@override String get presentation => 'I aspire to be a person capable of motivating, leading and teaching others. I am interested in backend development and open to learning from different areas that I can specialize in. I enjoy being involved in community and diversified learning activities. Also, in my free time I dedicate myself to develop personal projects.';
+	@override String get presentation => 'Leader, inspirer, and mentor, are the qualities I always try to be seen in me. I am an enthusiastic learner of cross-platform development technologies, with a focus on mobile platforms, and open to learning from other areas of technology. I like to get involved in community and diversified learning activities. I pursue to learn a little bit every day, looking for opportunities in everything I find. I am currently focused on the Flutter Framework, recognizing its value as a technology with potential to streamline application development.';
 }
 
 // Path: project
@@ -534,7 +534,7 @@ extension on Translations {
 		switch (path) {
 			case 'about.gretting': return '¡Bienvenido, usuario desconocido!';
 			case 'about.title': return 'Desarrollador de Software';
-			case 'about.presentation': return 'Aspiro a ser una persona capaz de motivar, liderar y enseñar a los demás. Estoy interesado en el desarrollo backend y abierto a aprender de las distintas áreas en las que pueda especializarme. Me gusta involucrarme en actividades comunitarias y de aprendizaje diversificado. Además, en mis tiempos libres me dedico a desarrollar proyectos personales.';
+			case 'about.presentation': return 'Líder, inspirador, y mentor, son las cualidades que siempre trato de que vean en mí. Soy un estudiante entusiasta por las tecnologías de desarrollo multiplataforma, con enfoque a las plataformas móviles, y abierto a aprender de otras áreas de la tecnología. Me gusta involucrarme en actividades comunitarias y de aprendizaje diversificado. Persigo aprender un poco cada día, buscando oportunidades en todo lo que encuentre. Actualmente estoy enfocado en el Framework Flutter, reconociendo su valor como una tecnología con potencial para agilizar el desarrollo de aplicaciones.';
 			case 'project.snowNotepad.title': return 'Snow Notepad';
 			case 'project.snowNotepad.description': return 'Un bloc de notas móvil desarrollado en Flutter, utilizando SQLite para la administración de las notas del usuario directamente en su dispositivo y sin conexión a internet.';
 			case 'project.snowNotepad.image': return ({required Object imagePath}) => '${imagePath}';
@@ -593,7 +593,7 @@ extension on _TranslationsEn {
 		switch (path) {
 			case 'about.gretting': return 'Welcome, unknown user!';
 			case 'about.title': return 'Software Developer';
-			case 'about.presentation': return 'I aspire to be a person capable of motivating, leading and teaching others. I am interested in backend development and open to learning from different areas that I can specialize in. I enjoy being involved in community and diversified learning activities. Also, in my free time I dedicate myself to develop personal projects.';
+			case 'about.presentation': return 'Leader, inspirer, and mentor, are the qualities I always try to be seen in me. I am an enthusiastic learner of cross-platform development technologies, with a focus on mobile platforms, and open to learning from other areas of technology. I like to get involved in community and diversified learning activities. I pursue to learn a little bit every day, looking for opportunities in everything I find. I am currently focused on the Flutter Framework, recognizing its value as a technology with potential to streamline application development.';
 			case 'project.snowNotepad.title': return 'Snow Notepad';
 			case 'project.snowNotepad.description': return 'A mobile notepad developed in Flutter, using SQLite for managing user notes directly on their device and offline.';
 			case 'project.snowNotepad.image': return ({required Object imagePath}) => '${imagePath}';

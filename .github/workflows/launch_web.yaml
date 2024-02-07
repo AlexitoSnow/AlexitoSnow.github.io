@@ -19,7 +19,6 @@ jobs:
         working-directory: snow_portfolio
       - run: flutter build web --web-renderer canvaskit --release
         working-directory: snow_portfolio
-      - run: mkdir docs
       - run: cp -r snow_portfolio/build/web/* docs # Comando para copiar el contenido de build/web a docs
       - run: cp snow_portfolio/assets/google51501707e62fe96b.html docs/google51501707e62fe96b.html
       - run: flutter clean

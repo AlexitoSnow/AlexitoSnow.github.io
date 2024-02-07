@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 
 extension WidgetExtensions on Widget {
 
@@ -83,4 +82,5 @@ extension EasyContext on BuildContext {
   double get height => mediaQuerySize.height;
   double get width => mediaQuerySize.width;
   ThemeData get theme => Theme.of(this);
+  bool get isPhone => width <= 800;
 }
