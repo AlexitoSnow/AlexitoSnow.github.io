@@ -4,9 +4,9 @@
 /// To regenerate, run: `dart run slang`
 ///
 /// Locales: 2
-/// Strings: 196 (98 per locale)
+/// Strings: 102 (51 per locale)
 ///
-/// Built on 2024-01-10 at 00:17 UTC
+/// Built on 2024-02-07 at 03:19 UTC
 
 // coverage:ignore-file
 // ignore_for_file: type=lint
@@ -149,11 +149,9 @@ class Translations implements BaseTranslations<AppLocale, Translations> {
 
 	// Translations
 	late final _TranslationsAboutEs about = _TranslationsAboutEs._(_root);
-	late final _TranslationsExtracurricularEs extracurricular = _TranslationsExtracurricularEs._(_root);
 	late final _TranslationsProjectEs project = _TranslationsProjectEs._(_root);
-	late final _TranslationsSkillsEs skills = _TranslationsSkillsEs._(_root);
 	late final _TranslationsTabsEs tabs = _TranslationsTabsEs._(_root);
-	late final _TranslationsVolunteeringEs volunteering = _TranslationsVolunteeringEs._(_root);
+	late final _TranslationsTechnologiesEs technologies = _TranslationsTechnologiesEs._(_root);
 }
 
 // Path: about
@@ -166,18 +164,6 @@ class _TranslationsAboutEs {
 	String get gretting => '¡Bienvenido, usuario desconocido!';
 	String get title => 'Desarrollador de Software';
 	String get presentation => 'Aspiro a ser una persona capaz de motivar, liderar y enseñar a los demás. Estoy interesado en el desarrollo backend y abierto a aprender de las distintas áreas en las que pueda especializarme. Me gusta involucrarme en actividades comunitarias y de aprendizaje diversificado. Además, en mis tiempos libres me dedico a desarrollar proyectos personales.';
-}
-
-// Path: extracurricular
-class _TranslationsExtracurricularEs {
-	_TranslationsExtracurricularEs._(this._root);
-
-	final Translations _root; // ignore: unused_field
-
-	// Translations
-	late final _TranslationsExtracurricularAct1Es act1 = _TranslationsExtracurricularAct1Es._(_root);
-	late final _TranslationsExtracurricularAct2Es act2 = _TranslationsExtracurricularAct2Es._(_root);
-	late final _TranslationsExtracurricularAct3Es act3 = _TranslationsExtracurricularAct3Es._(_root);
 }
 
 // Path: project
@@ -196,31 +182,6 @@ class _TranslationsProjectEs {
 	late final _TranslationsProjectSnakeGameEs snakeGame = _TranslationsProjectSnakeGameEs._(_root);
 }
 
-// Path: skills
-class _TranslationsSkillsEs {
-	_TranslationsSkillsEs._(this._root);
-
-	final Translations _root; // ignore: unused_field
-
-	// Translations
-	late final _TranslationsSkillsHeadersEs headers = _TranslationsSkillsHeadersEs._(_root);
-	late final _TranslationsSkillsEducationEs education = _TranslationsSkillsEducationEs._(_root);
-	List<String> get softskills => [
-		'Trabajo en Equipo',
-		'Liderazgo',
-		'Adaptabilidad',
-		'Resolución de Problemas',
-		'Pensamiento Crítico',
-		'Empatía',
-		'Gestión de Proyectos',
-		'Orientado a Resultados',
-	];
-	List<String> get languages => [
-		'Español',
-		'Inglés',
-	];
-}
-
 // Path: tabs
 class _TranslationsTabsEs {
 	_TranslationsTabsEs._(this._root);
@@ -229,62 +190,21 @@ class _TranslationsTabsEs {
 
 	// Translations
 	String get about => 'Sobre mí';
-	String get skills => 'Habilidades';
+	String get technologies => 'Tecnologías';
 	String get projects => 'Proyectos';
-	String get extracurricular => 'Extracurriculares';
-	String get volunteering => 'Voluntariado';
 }
 
-// Path: volunteering
-class _TranslationsVolunteeringEs {
-	_TranslationsVolunteeringEs._(this._root);
+// Path: technologies
+class _TranslationsTechnologiesEs {
+	_TranslationsTechnologiesEs._(this._root);
 
 	final Translations _root; // ignore: unused_field
 
 	// Translations
-	late final _TranslationsVolunteeringVol1Es vol1 = _TranslationsVolunteeringVol1Es._(_root);
-	late final _TranslationsVolunteeringVol2Es vol2 = _TranslationsVolunteeringVol2Es._(_root);
-	late final _TranslationsVolunteeringVol3Es vol3 = _TranslationsVolunteeringVol3Es._(_root);
-	late final _TranslationsVolunteeringVol4Es vol4 = _TranslationsVolunteeringVol4Es._(_root);
-}
-
-// Path: extracurricular.act1
-class _TranslationsExtracurricularAct1Es {
-	_TranslationsExtracurricularAct1Es._(this._root);
-
-	final Translations _root; // ignore: unused_field
-
-	// Translations
-	String get name => '<El_Hackathon> Vol. I';
-	String get institution => 'Guayaquil Tech';
-	String date({required Object startDate, required Object endDate}) => '${startDate} a ${endDate}';
-	String get description => 'Participación en la competencia de programación en un desafío propuesto por la empresa Publifyer, contribuyendo al desarrollo de la API de nuestro proyecto, misma que consumía los servicios de OpenAI.';
-}
-
-// Path: extracurricular.act2
-class _TranslationsExtracurricularAct2Es {
-	_TranslationsExtracurricularAct2Es._(this._root);
-
-	final Translations _root; // ignore: unused_field
-
-	// Translations
-	String get name => 'NASA Space Apps Challenge Guayaquil 2023';
-	String get institution => 'CORPCITI';
-	String date({required Object startDate, required Object endDate}) => '${startDate} a ${endDate}';
-	String get description => 'Líder y participante en la competencia de programación local Space Apps en el desafío “Planetary Tourism Office”, diseñando la interfaz frontend.';
-}
-
-// Path: extracurricular.act3
-class _TranslationsExtracurricularAct3Es {
-	_TranslationsExtracurricularAct3Es._(this._root);
-
-	final Translations _root; // ignore: unused_field
-
-	// Translations
-	String get name => 'Concurso IOT&AI Latinoamérica 2023';
-	String get institution => 'IEEE TEMS';
-	String date({required Object startDate, required Object endDate}) => '${startDate} a ${endDate}';
-	String get description => 'Diseño de la interfaz frontend para el proyecto “CrimeBuster”, el cual consiste en un sistema de detección de crímenes en tiempo real, utilizando inteligencia artificial y aprendizaje automático.';
+	String get languages => 'Lenguajes';
+	String get frameworks => 'Marcos de Trabajo';
+	String get databases => 'Bases de Datos';
+	String get tools => 'Herramientas';
 }
 
 // Path: project.snowNotepad
@@ -405,107 +325,6 @@ class _TranslationsProjectSnakeGameEs {
 	];
 }
 
-// Path: skills.headers
-class _TranslationsSkillsHeadersEs {
-	_TranslationsSkillsHeadersEs._(this._root);
-
-	final Translations _root; // ignore: unused_field
-
-	// Translations
-	String get education => 'Educación';
-	String get softskills => 'Habilidades Blandas';
-	String get languages => 'Idiomas';
-}
-
-// Path: skills.education
-class _TranslationsSkillsEducationEs {
-	_TranslationsSkillsEducationEs._(this._root);
-
-	final Translations _root; // ignore: unused_field
-
-	// Translations
-	late final _TranslationsSkillsEducationUniversityEs university = _TranslationsSkillsEducationUniversityEs._(_root);
-	late final _TranslationsSkillsEducationCourseEs course = _TranslationsSkillsEducationCourseEs._(_root);
-}
-
-// Path: volunteering.vol1
-class _TranslationsVolunteeringVol1Es {
-	_TranslationsVolunteeringVol1Es._(this._root);
-
-	final Translations _root; // ignore: unused_field
-
-	// Translations
-	String get name => 'Vicepresidente';
-	String get institution => 'IEEE ESPOL Computer Society';
-	String date({required Object startDate, required Object endDate}) => '${startDate} a ${endDate}';
-	String get description => 'Dirección de proyectos, comunicación con estudiantes.';
-}
-
-// Path: volunteering.vol2
-class _TranslationsVolunteeringVol2Es {
-	_TranslationsVolunteeringVol2Es._(this._root);
-
-	final Translations _root; // ignore: unused_field
-
-	// Translations
-	String get name => 'Colaborador en la 12va edición de PyWeekend 2023';
-	String get institution => 'ESPOL';
-	String date({required Object startDate, required Object endDate}) => '${startDate} a ${endDate}';
-	String get description => 'Contribuí en la elaboración del desafío de la semifinal de la competencia de programación en Python. Además, ayudé a orientar a los participantes el día de la competencia.';
-}
-
-// Path: volunteering.vol3
-class _TranslationsVolunteeringVol3Es {
-	_TranslationsVolunteeringVol3Es._(this._root);
-
-	final Translations _root; // ignore: unused_field
-
-	// Translations
-	String get name => 'Guía en Django Girls';
-	String get institution => 'Open Lab';
-	String date({required Object startDate, required Object endDate}) => '${startDate} a ${endDate}';
-	String get description => 'Contribuí a que las participantes puedan desarrollar, satisfactoriamente, el tutorial introductorio a Django.';
-}
-
-// Path: volunteering.vol4
-class _TranslationsVolunteeringVol4Es {
-	_TranslationsVolunteeringVol4Es._(this._root);
-
-	final Translations _root; // ignore: unused_field
-
-	// Translations
-	String get name => 'Colaborador en la 2da edición de PyTime IoT';
-	String get institution => 'Niot ESPOL';
-	String date({required Object startDate, required Object endDate}) => '${startDate} a ${endDate}';
-	String get description => 'Dar soporte a los estudiantes en temas relacionados al lenguaje de programación Python y resolver sus inquietudes durante su proceso de aprendizaje.';
-}
-
-// Path: skills.education.university
-class _TranslationsSkillsEducationUniversityEs {
-	_TranslationsSkillsEducationUniversityEs._(this._root);
-
-	final Translations _root; // ignore: unused_field
-
-	// Translations
-	String get name => 'Ingeniería en Ciencias de la Computación';
-	String get institution => 'ESPOL';
-	String date({required Object startDate}) => '${startDate} hasta la actualidad';
-	String get description => '4to semestre';
-}
-
-// Path: skills.education.course
-class _TranslationsSkillsEducationCourseEs {
-	_TranslationsSkillsEducationCourseEs._(this._root);
-
-	final Translations _root; // ignore: unused_field
-
-	// Translations
-	String get name => 'Ingeniería de Datos';
-	String get institution => 'SEE';
-	String date({required Object startDate, required Object endDate}) => '${startDate} hasta ${endDate}';
-	String get description => 'Arquitectura de Datos\nModelado y Diseño de Datos\nProcesamiento Analítico\nCalidad de Datos\nProcesamiento de Big Data con Apache Spark\nTuberías de Datos con Apache Airflow';
-}
-
 // Path: <root>
 class _TranslationsEn implements Translations {
 	/// You can call this constructor and build your own translation instance of this locale.
@@ -531,11 +350,9 @@ class _TranslationsEn implements Translations {
 
 	// Translations
 	@override late final _TranslationsAboutEn about = _TranslationsAboutEn._(_root);
-	@override late final _TranslationsExtracurricularEn extracurricular = _TranslationsExtracurricularEn._(_root);
 	@override late final _TranslationsProjectEn project = _TranslationsProjectEn._(_root);
-	@override late final _TranslationsSkillsEn skills = _TranslationsSkillsEn._(_root);
 	@override late final _TranslationsTabsEn tabs = _TranslationsTabsEn._(_root);
-	@override late final _TranslationsVolunteeringEn volunteering = _TranslationsVolunteeringEn._(_root);
+	@override late final _TranslationsTechnologiesEn technologies = _TranslationsTechnologiesEn._(_root);
 }
 
 // Path: about
@@ -548,18 +365,6 @@ class _TranslationsAboutEn implements _TranslationsAboutEs {
 	@override String get gretting => 'Welcome, unknown user!';
 	@override String get title => 'Software Developer';
 	@override String get presentation => 'I aspire to be a person capable of motivating, leading and teaching others. I am interested in backend development and open to learning from different areas that I can specialize in. I enjoy being involved in community and diversified learning activities. Also, in my free time I dedicate myself to develop personal projects.';
-}
-
-// Path: extracurricular
-class _TranslationsExtracurricularEn implements _TranslationsExtracurricularEs {
-	_TranslationsExtracurricularEn._(this._root);
-
-	@override final _TranslationsEn _root; // ignore: unused_field
-
-	// Translations
-	@override late final _TranslationsExtracurricularAct1En act1 = _TranslationsExtracurricularAct1En._(_root);
-	@override late final _TranslationsExtracurricularAct2En act2 = _TranslationsExtracurricularAct2En._(_root);
-	@override late final _TranslationsExtracurricularAct3En act3 = _TranslationsExtracurricularAct3En._(_root);
 }
 
 // Path: project
@@ -578,31 +383,6 @@ class _TranslationsProjectEn implements _TranslationsProjectEs {
 	@override late final _TranslationsProjectSnakeGameEn snakeGame = _TranslationsProjectSnakeGameEn._(_root);
 }
 
-// Path: skills
-class _TranslationsSkillsEn implements _TranslationsSkillsEs {
-	_TranslationsSkillsEn._(this._root);
-
-	@override final _TranslationsEn _root; // ignore: unused_field
-
-	// Translations
-	@override late final _TranslationsSkillsHeadersEn headers = _TranslationsSkillsHeadersEn._(_root);
-	@override late final _TranslationsSkillsEducationEn education = _TranslationsSkillsEducationEn._(_root);
-	@override List<String> get softskills => [
-		'Teamwork',
-		'Leadership',
-		'Adaptability',
-		'Problem Solving',
-		'Critical Thinking',
-		'Empathy',
-		'Project Management',
-		'Results Oriented',
-	];
-	@override List<String> get languages => [
-		'Spanish',
-		'English',
-	];
-}
-
 // Path: tabs
 class _TranslationsTabsEn implements _TranslationsTabsEs {
 	_TranslationsTabsEn._(this._root);
@@ -611,62 +391,21 @@ class _TranslationsTabsEn implements _TranslationsTabsEs {
 
 	// Translations
 	@override String get about => 'About';
-	@override String get skills => 'Skills';
+	@override String get technologies => 'Technologies';
 	@override String get projects => 'Projects';
-	@override String get extracurricular => 'Extracurricular';
-	@override String get volunteering => 'Volunteering';
 }
 
-// Path: volunteering
-class _TranslationsVolunteeringEn implements _TranslationsVolunteeringEs {
-	_TranslationsVolunteeringEn._(this._root);
+// Path: technologies
+class _TranslationsTechnologiesEn implements _TranslationsTechnologiesEs {
+	_TranslationsTechnologiesEn._(this._root);
 
 	@override final _TranslationsEn _root; // ignore: unused_field
 
 	// Translations
-	@override late final _TranslationsVolunteeringVol1En vol1 = _TranslationsVolunteeringVol1En._(_root);
-	@override late final _TranslationsVolunteeringVol2En vol2 = _TranslationsVolunteeringVol2En._(_root);
-	@override late final _TranslationsVolunteeringVol3En vol3 = _TranslationsVolunteeringVol3En._(_root);
-	@override late final _TranslationsVolunteeringVol4En vol4 = _TranslationsVolunteeringVol4En._(_root);
-}
-
-// Path: extracurricular.act1
-class _TranslationsExtracurricularAct1En implements _TranslationsExtracurricularAct1Es {
-	_TranslationsExtracurricularAct1En._(this._root);
-
-	@override final _TranslationsEn _root; // ignore: unused_field
-
-	// Translations
-	@override String get name => '<El_Hackathon> Vol. I';
-	@override String get institution => 'Guayaquil Tech';
-	@override String date({required Object startDate, required Object endDate}) => '${startDate} to ${endDate}';
-	@override String get description => 'Participation in the programming competition in a challenge proposed by the company Publifyer, contributing to the development of our project\'s API, which consumed services from OpenAI.';
-}
-
-// Path: extracurricular.act2
-class _TranslationsExtracurricularAct2En implements _TranslationsExtracurricularAct2Es {
-	_TranslationsExtracurricularAct2En._(this._root);
-
-	@override final _TranslationsEn _root; // ignore: unused_field
-
-	// Translations
-	@override String get name => 'NASA Space Apps Challenge Guayaquil 2023';
-	@override String get institution => 'CORPCITI';
-	@override String date({required Object startDate, required Object endDate}) => '${startDate} to ${endDate}';
-	@override String get description => 'Leader and participant in the local programming competition Space Apps in the challenge \'Planetary Tourism Office\', designing the frontend interface.';
-}
-
-// Path: extracurricular.act3
-class _TranslationsExtracurricularAct3En implements _TranslationsExtracurricularAct3Es {
-	_TranslationsExtracurricularAct3En._(this._root);
-
-	@override final _TranslationsEn _root; // ignore: unused_field
-
-	// Translations
-	@override String get name => 'IOT&AI Latin America Competition 2023';
-	@override String get institution => 'IEEE TEMS';
-	@override String date({required Object startDate, required Object endDate}) => '${startDate} to ${endDate}';
-	@override String get description => 'Design of the frontend interface for the project \'CrimeBuster\', which consists of a real-time crime detection system using artificial intelligence and machine learning.';
+	@override String get languages => 'Languages';
+	@override String get frameworks => 'Frameworks';
+	@override String get databases => 'Data Bases';
+	@override String get tools => 'Tools';
 }
 
 // Path: project.snowNotepad
@@ -787,107 +526,6 @@ class _TranslationsProjectSnakeGameEn implements _TranslationsProjectSnakeGameEs
 	];
 }
 
-// Path: skills.headers
-class _TranslationsSkillsHeadersEn implements _TranslationsSkillsHeadersEs {
-	_TranslationsSkillsHeadersEn._(this._root);
-
-	@override final _TranslationsEn _root; // ignore: unused_field
-
-	// Translations
-	@override String get education => 'Education';
-	@override String get softskills => 'Soft Skills';
-	@override String get languages => 'Languages';
-}
-
-// Path: skills.education
-class _TranslationsSkillsEducationEn implements _TranslationsSkillsEducationEs {
-	_TranslationsSkillsEducationEn._(this._root);
-
-	@override final _TranslationsEn _root; // ignore: unused_field
-
-	// Translations
-	@override late final _TranslationsSkillsEducationUniversityEn university = _TranslationsSkillsEducationUniversityEn._(_root);
-	@override late final _TranslationsSkillsEducationCourseEn course = _TranslationsSkillsEducationCourseEn._(_root);
-}
-
-// Path: volunteering.vol1
-class _TranslationsVolunteeringVol1En implements _TranslationsVolunteeringVol1Es {
-	_TranslationsVolunteeringVol1En._(this._root);
-
-	@override final _TranslationsEn _root; // ignore: unused_field
-
-	// Translations
-	@override String get name => 'Vice President';
-	@override String get institution => 'IEEE ESPOL Computer Society';
-	@override String date({required Object startDate, required Object endDate}) => '${startDate} to ${endDate}';
-	@override String get description => 'Project management, communication with students.';
-}
-
-// Path: volunteering.vol2
-class _TranslationsVolunteeringVol2En implements _TranslationsVolunteeringVol2Es {
-	_TranslationsVolunteeringVol2En._(this._root);
-
-	@override final _TranslationsEn _root; // ignore: unused_field
-
-	// Translations
-	@override String get name => 'Contributor in the 12th edition of PyWeekend 2023';
-	@override String get institution => 'ESPOL';
-	@override String date({required Object startDate, required Object endDate}) => '${startDate} to ${endDate}';
-	@override String get description => 'Contributed to the development of the semifinal challenge of the Python programming competition. Also, helped guide participants on the day of the competition.';
-}
-
-// Path: volunteering.vol3
-class _TranslationsVolunteeringVol3En implements _TranslationsVolunteeringVol3Es {
-	_TranslationsVolunteeringVol3En._(this._root);
-
-	@override final _TranslationsEn _root; // ignore: unused_field
-
-	// Translations
-	@override String get name => 'Guide at Django Girls';
-	@override String get institution => 'Open Lab';
-	@override String date({required Object startDate, required Object endDate}) => '${startDate} to ${endDate}';
-	@override String get description => 'Contributed to ensure that participants successfully complete the introductory Django tutorial.';
-}
-
-// Path: volunteering.vol4
-class _TranslationsVolunteeringVol4En implements _TranslationsVolunteeringVol4Es {
-	_TranslationsVolunteeringVol4En._(this._root);
-
-	@override final _TranslationsEn _root; // ignore: unused_field
-
-	// Translations
-	@override String get name => 'Contributor in the 2nd edition of PyTime IoT';
-	@override String get institution => 'Niot ESPOL';
-	@override String date({required Object startDate, required Object endDate}) => '${startDate} to ${endDate}';
-	@override String get description => 'Provided support to students in topics related to the Python programming language and resolved their inquiries during their learning process.';
-}
-
-// Path: skills.education.university
-class _TranslationsSkillsEducationUniversityEn implements _TranslationsSkillsEducationUniversityEs {
-	_TranslationsSkillsEducationUniversityEn._(this._root);
-
-	@override final _TranslationsEn _root; // ignore: unused_field
-
-	// Translations
-	@override String get name => 'Computer Science Engineering';
-	@override String get institution => 'ESPOL';
-	@override String date({required Object startDate}) => '${startDate} to Present';
-	@override String get description => '4th semester';
-}
-
-// Path: skills.education.course
-class _TranslationsSkillsEducationCourseEn implements _TranslationsSkillsEducationCourseEs {
-	_TranslationsSkillsEducationCourseEn._(this._root);
-
-	@override final _TranslationsEn _root; // ignore: unused_field
-
-	// Translations
-	@override String get name => 'Data Engineering';
-	@override String get institution => 'SEE';
-	@override String date({required Object startDate, required Object endDate}) => '${startDate} to ${endDate}';
-	@override String get description => 'Data Architecture\nData Modeling and Design\nAnalytical Processing\nData Quality\nBig Data Processing with Apache Spark\nData Pipelines with Apache Airflow';
-}
-
 /// Flat map(s) containing all translations.
 /// Only for edge cases! For simple maps, use the map function of this library.
 
@@ -897,18 +535,6 @@ extension on Translations {
 			case 'about.gretting': return '¡Bienvenido, usuario desconocido!';
 			case 'about.title': return 'Desarrollador de Software';
 			case 'about.presentation': return 'Aspiro a ser una persona capaz de motivar, liderar y enseñar a los demás. Estoy interesado en el desarrollo backend y abierto a aprender de las distintas áreas en las que pueda especializarme. Me gusta involucrarme en actividades comunitarias y de aprendizaje diversificado. Además, en mis tiempos libres me dedico a desarrollar proyectos personales.';
-			case 'extracurricular.act1.name': return '<El_Hackathon> Vol. I';
-			case 'extracurricular.act1.institution': return 'Guayaquil Tech';
-			case 'extracurricular.act1.date': return ({required Object startDate, required Object endDate}) => '${startDate} a ${endDate}';
-			case 'extracurricular.act1.description': return 'Participación en la competencia de programación en un desafío propuesto por la empresa Publifyer, contribuyendo al desarrollo de la API de nuestro proyecto, misma que consumía los servicios de OpenAI.';
-			case 'extracurricular.act2.name': return 'NASA Space Apps Challenge Guayaquil 2023';
-			case 'extracurricular.act2.institution': return 'CORPCITI';
-			case 'extracurricular.act2.date': return ({required Object startDate, required Object endDate}) => '${startDate} a ${endDate}';
-			case 'extracurricular.act2.description': return 'Líder y participante en la competencia de programación local Space Apps en el desafío “Planetary Tourism Office”, diseñando la interfaz frontend.';
-			case 'extracurricular.act3.name': return 'Concurso IOT&AI Latinoamérica 2023';
-			case 'extracurricular.act3.institution': return 'IEEE TEMS';
-			case 'extracurricular.act3.date': return ({required Object startDate, required Object endDate}) => '${startDate} a ${endDate}';
-			case 'extracurricular.act3.description': return 'Diseño de la interfaz frontend para el proyecto “CrimeBuster”, el cual consiste en un sistema de detección de crímenes en tiempo real, utilizando inteligencia artificial y aprendizaje automático.';
 			case 'project.snowNotepad.title': return 'Snow Notepad';
 			case 'project.snowNotepad.description': return 'Un bloc de notas móvil desarrollado en Flutter, utilizando SQLite para la administración de las notas del usuario directamente en su dispositivo y sin conexión a internet.';
 			case 'project.snowNotepad.image': return ({required Object imagePath}) => '${imagePath}';
@@ -950,48 +576,13 @@ extension on Translations {
 			case 'project.snakeGame.image': return ({required Object imagePath}) => '${imagePath}';
 			case 'project.snakeGame.repository': return ({required Object repository}) => '${repository}';
 			case 'project.snakeGame.technologies.0': return 'java';
-			case 'skills.headers.education': return 'Educación';
-			case 'skills.headers.softskills': return 'Habilidades Blandas';
-			case 'skills.headers.languages': return 'Idiomas';
-			case 'skills.education.university.name': return 'Ingeniería en Ciencias de la Computación';
-			case 'skills.education.university.institution': return 'ESPOL';
-			case 'skills.education.university.date': return ({required Object startDate}) => '${startDate} hasta la actualidad';
-			case 'skills.education.university.description': return '4to semestre';
-			case 'skills.education.course.name': return 'Ingeniería de Datos';
-			case 'skills.education.course.institution': return 'SEE';
-			case 'skills.education.course.date': return ({required Object startDate, required Object endDate}) => '${startDate} hasta ${endDate}';
-			case 'skills.education.course.description': return 'Arquitectura de Datos\nModelado y Diseño de Datos\nProcesamiento Analítico\nCalidad de Datos\nProcesamiento de Big Data con Apache Spark\nTuberías de Datos con Apache Airflow';
-			case 'skills.softskills.0': return 'Trabajo en Equipo';
-			case 'skills.softskills.1': return 'Liderazgo';
-			case 'skills.softskills.2': return 'Adaptabilidad';
-			case 'skills.softskills.3': return 'Resolución de Problemas';
-			case 'skills.softskills.4': return 'Pensamiento Crítico';
-			case 'skills.softskills.5': return 'Empatía';
-			case 'skills.softskills.6': return 'Gestión de Proyectos';
-			case 'skills.softskills.7': return 'Orientado a Resultados';
-			case 'skills.languages.0': return 'Español';
-			case 'skills.languages.1': return 'Inglés';
 			case 'tabs.about': return 'Sobre mí';
-			case 'tabs.skills': return 'Habilidades';
+			case 'tabs.technologies': return 'Tecnologías';
 			case 'tabs.projects': return 'Proyectos';
-			case 'tabs.extracurricular': return 'Extracurriculares';
-			case 'tabs.volunteering': return 'Voluntariado';
-			case 'volunteering.vol1.name': return 'Vicepresidente';
-			case 'volunteering.vol1.institution': return 'IEEE ESPOL Computer Society';
-			case 'volunteering.vol1.date': return ({required Object startDate, required Object endDate}) => '${startDate} a ${endDate}';
-			case 'volunteering.vol1.description': return 'Dirección de proyectos, comunicación con estudiantes.';
-			case 'volunteering.vol2.name': return 'Colaborador en la 12va edición de PyWeekend 2023';
-			case 'volunteering.vol2.institution': return 'ESPOL';
-			case 'volunteering.vol2.date': return ({required Object startDate, required Object endDate}) => '${startDate} a ${endDate}';
-			case 'volunteering.vol2.description': return 'Contribuí en la elaboración del desafío de la semifinal de la competencia de programación en Python. Además, ayudé a orientar a los participantes el día de la competencia.';
-			case 'volunteering.vol3.name': return 'Guía en Django Girls';
-			case 'volunteering.vol3.institution': return 'Open Lab';
-			case 'volunteering.vol3.date': return ({required Object startDate, required Object endDate}) => '${startDate} a ${endDate}';
-			case 'volunteering.vol3.description': return 'Contribuí a que las participantes puedan desarrollar, satisfactoriamente, el tutorial introductorio a Django.';
-			case 'volunteering.vol4.name': return 'Colaborador en la 2da edición de PyTime IoT';
-			case 'volunteering.vol4.institution': return 'Niot ESPOL';
-			case 'volunteering.vol4.date': return ({required Object startDate, required Object endDate}) => '${startDate} a ${endDate}';
-			case 'volunteering.vol4.description': return 'Dar soporte a los estudiantes en temas relacionados al lenguaje de programación Python y resolver sus inquietudes durante su proceso de aprendizaje.';
+			case 'technologies.languages': return 'Lenguajes';
+			case 'technologies.frameworks': return 'Marcos de Trabajo';
+			case 'technologies.databases': return 'Bases de Datos';
+			case 'technologies.tools': return 'Herramientas';
 			default: return null;
 		}
 	}
@@ -1003,18 +594,6 @@ extension on _TranslationsEn {
 			case 'about.gretting': return 'Welcome, unknown user!';
 			case 'about.title': return 'Software Developer';
 			case 'about.presentation': return 'I aspire to be a person capable of motivating, leading and teaching others. I am interested in backend development and open to learning from different areas that I can specialize in. I enjoy being involved in community and diversified learning activities. Also, in my free time I dedicate myself to develop personal projects.';
-			case 'extracurricular.act1.name': return '<El_Hackathon> Vol. I';
-			case 'extracurricular.act1.institution': return 'Guayaquil Tech';
-			case 'extracurricular.act1.date': return ({required Object startDate, required Object endDate}) => '${startDate} to ${endDate}';
-			case 'extracurricular.act1.description': return 'Participation in the programming competition in a challenge proposed by the company Publifyer, contributing to the development of our project\'s API, which consumed services from OpenAI.';
-			case 'extracurricular.act2.name': return 'NASA Space Apps Challenge Guayaquil 2023';
-			case 'extracurricular.act2.institution': return 'CORPCITI';
-			case 'extracurricular.act2.date': return ({required Object startDate, required Object endDate}) => '${startDate} to ${endDate}';
-			case 'extracurricular.act2.description': return 'Leader and participant in the local programming competition Space Apps in the challenge \'Planetary Tourism Office\', designing the frontend interface.';
-			case 'extracurricular.act3.name': return 'IOT&AI Latin America Competition 2023';
-			case 'extracurricular.act3.institution': return 'IEEE TEMS';
-			case 'extracurricular.act3.date': return ({required Object startDate, required Object endDate}) => '${startDate} to ${endDate}';
-			case 'extracurricular.act3.description': return 'Design of the frontend interface for the project \'CrimeBuster\', which consists of a real-time crime detection system using artificial intelligence and machine learning.';
 			case 'project.snowNotepad.title': return 'Snow Notepad';
 			case 'project.snowNotepad.description': return 'A mobile notepad developed in Flutter, using SQLite for managing user notes directly on their device and offline.';
 			case 'project.snowNotepad.image': return ({required Object imagePath}) => '${imagePath}';
@@ -1056,48 +635,13 @@ extension on _TranslationsEn {
 			case 'project.snakeGame.image': return ({required Object imagePath}) => '${imagePath}';
 			case 'project.snakeGame.repository': return ({required Object repository}) => '${repository}';
 			case 'project.snakeGame.technologies.0': return 'java';
-			case 'skills.headers.education': return 'Education';
-			case 'skills.headers.softskills': return 'Soft Skills';
-			case 'skills.headers.languages': return 'Languages';
-			case 'skills.education.university.name': return 'Computer Science Engineering';
-			case 'skills.education.university.institution': return 'ESPOL';
-			case 'skills.education.university.date': return ({required Object startDate}) => '${startDate} to Present';
-			case 'skills.education.university.description': return '4th semester';
-			case 'skills.education.course.name': return 'Data Engineering';
-			case 'skills.education.course.institution': return 'SEE';
-			case 'skills.education.course.date': return ({required Object startDate, required Object endDate}) => '${startDate} to ${endDate}';
-			case 'skills.education.course.description': return 'Data Architecture\nData Modeling and Design\nAnalytical Processing\nData Quality\nBig Data Processing with Apache Spark\nData Pipelines with Apache Airflow';
-			case 'skills.softskills.0': return 'Teamwork';
-			case 'skills.softskills.1': return 'Leadership';
-			case 'skills.softskills.2': return 'Adaptability';
-			case 'skills.softskills.3': return 'Problem Solving';
-			case 'skills.softskills.4': return 'Critical Thinking';
-			case 'skills.softskills.5': return 'Empathy';
-			case 'skills.softskills.6': return 'Project Management';
-			case 'skills.softskills.7': return 'Results Oriented';
-			case 'skills.languages.0': return 'Spanish';
-			case 'skills.languages.1': return 'English';
 			case 'tabs.about': return 'About';
-			case 'tabs.skills': return 'Skills';
+			case 'tabs.technologies': return 'Technologies';
 			case 'tabs.projects': return 'Projects';
-			case 'tabs.extracurricular': return 'Extracurricular';
-			case 'tabs.volunteering': return 'Volunteering';
-			case 'volunteering.vol1.name': return 'Vice President';
-			case 'volunteering.vol1.institution': return 'IEEE ESPOL Computer Society';
-			case 'volunteering.vol1.date': return ({required Object startDate, required Object endDate}) => '${startDate} to ${endDate}';
-			case 'volunteering.vol1.description': return 'Project management, communication with students.';
-			case 'volunteering.vol2.name': return 'Contributor in the 12th edition of PyWeekend 2023';
-			case 'volunteering.vol2.institution': return 'ESPOL';
-			case 'volunteering.vol2.date': return ({required Object startDate, required Object endDate}) => '${startDate} to ${endDate}';
-			case 'volunteering.vol2.description': return 'Contributed to the development of the semifinal challenge of the Python programming competition. Also, helped guide participants on the day of the competition.';
-			case 'volunteering.vol3.name': return 'Guide at Django Girls';
-			case 'volunteering.vol3.institution': return 'Open Lab';
-			case 'volunteering.vol3.date': return ({required Object startDate, required Object endDate}) => '${startDate} to ${endDate}';
-			case 'volunteering.vol3.description': return 'Contributed to ensure that participants successfully complete the introductory Django tutorial.';
-			case 'volunteering.vol4.name': return 'Contributor in the 2nd edition of PyTime IoT';
-			case 'volunteering.vol4.institution': return 'Niot ESPOL';
-			case 'volunteering.vol4.date': return ({required Object startDate, required Object endDate}) => '${startDate} to ${endDate}';
-			case 'volunteering.vol4.description': return 'Provided support to students in topics related to the Python programming language and resolved their inquiries during their learning process.';
+			case 'technologies.languages': return 'Languages';
+			case 'technologies.frameworks': return 'Frameworks';
+			case 'technologies.databases': return 'Data Bases';
+			case 'technologies.tools': return 'Tools';
 			default: return null;
 		}
 	}

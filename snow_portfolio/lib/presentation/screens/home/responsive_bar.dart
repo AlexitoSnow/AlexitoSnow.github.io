@@ -1,48 +1,62 @@
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
-import 'package:snow_portfolio/presentation/controllers/home/home_controller.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:snow_portfolio/config/config.dart';
+import 'package:snow_portfolio/presentation/bloc/bloc.dart';
 
-class ResponsiveBar extends GetView<HomeController> {
+class ResponsiveBar extends StatelessWidget {
   final bool isPhone;
 
   Widget get _showTopBar {
-    return Row(
-        children: List.generate(
-      controller.titles.length,
-      (index) => Obx(
-        () => InkWell(
-          onTap: () => controller.changePage(index),
-          child: Text(
-            controller.titles[index],
-            style: TextStyle(
-                decoration: controller.currentPage == index
-                    ? TextDecoration.underline
-                    : null),
-          ).paddingSymmetric(horizontal: 20),
-        ),
-      ),
-    ));
+    return BlocBuilder<HomeCubit, HomeState>(
+      builder: (context, state) {
+        final controller = context.watch<HomeCubit>();
+        return Row(
+          children: List.generate(
+            controller.pages.length,
+            (index) => InkWell(
+              onTap: () => controller.changePage(index),
+              child: AnimatedContainer(
+                duration: const Duration(seconds: 1),
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(10),
+                  color: controller.state.currentPage == index
+                      ? mainColor
+                      : Colors.transparent,
+                ),
+                child: Text(controller.pages[index].title)
+                    .paddingSymmetric(horizontal: 20),
+              ),
+            ),
+          ),
+        );
+      },
+    );
   }
 
   Widget get _showDrawer {
-    return Obx(
-      () => NavigationDrawer(
-        onDestinationSelected: (int index) {
-          controller.changePage(index);
-        },
-        selectedIndex: controller.currentPage,
-        children: [
-          const Align(
-            alignment: Alignment.centerRight,
-            child: CloseButton(),
-          ),
-          for (var i = 0; i < controller.titles.length; i++)
-            NavigationDrawerDestination(
-              label: Text(controller.titles[i]),
-              icon: controller.icons[i],
+    return BlocBuilder<HomeCubit, HomeState>(
+      builder: (context, state) {
+        final controller = context.watch<HomeCubit>();
+        return NavigationDrawer(
+          onDestinationSelected: (int index) {
+            controller.changePage(index);
+          },
+          selectedIndex: controller.state.currentPage,
+          children: [
+            const Align(
+              alignment: Alignment.centerRight,
+              child: CloseButton(),
             ),
-        ],
-      ),
+            for (var i = 0; i < controller.pages.length; i++)
+              NavigationDrawerDestination(
+                label: Text(controller.pages[i].title),
+                icon: const Icon(Icons.arrow_forward_ios_rounded),
+                selectedIcon: const Icon(Icons.arrow_forward_ios_rounded,
+                    color: mainColor),
+              ),
+          ],
+        );
+      },
     );
   }
 

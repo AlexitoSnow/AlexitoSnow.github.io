@@ -1,35 +1,90 @@
 import 'package:flutter/material.dart';
-import 'package:card_swiper/card_swiper.dart';
-import 'package:get/get.dart';
-import '../../controllers/controllers.dart';
-import 'project_card.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:snow_portfolio/config/config.dart';
+import '../../bloc/bloc.dart';
+import 'project_page.dart';
 
-class ProjectsView extends GetView<ProjectsController> {
+class ProjectsView extends StatelessWidget {
   const ProjectsView({super.key});
   @override
   Widget build(BuildContext context) {
-    final isPhone = context.width <= 800;
-    return SizedBox(
-      height: Get.height,
-      child: Swiper(
-        itemBuilder: (BuildContext context, int index) => ProjectCard(
-          projectModel: controller.projectItems[index],
-          rotationAngle: isPhone ? 0 : (index % 2 == 0 ? 0.2 : -0.2),
-        ),
-        itemCount: controller.projectItems.length,
-        layout: SwiperLayout.TINDER,
-        itemWidth: double.infinity,
-        itemHeight: 600,
-        pagination: SwiperPagination(
-          builder: DotSwiperPaginationBuilder(
-            activeColor: Get.theme.colorScheme.primary,
-            color: Get.theme.colorScheme.secondary,
+    final controller = context.watch<ProjectsCubit>();
+    return Column(
+      children: [
+        Scrollbar(
+          controller: controller.scrollController,
+          child: SizedBox(
+            height: context.width * 0.1,
+            width: context.width,
+            child: ListView(
+              shrinkWrap: true,
+              scrollDirection: Axis.horizontal,
+              controller: controller.scrollController,
+              children: List.generate(
+                controller.projectItems.length,
+                (index) {
+                  return InkWell(
+                    onTap: () {
+                      controller.pageController.animateToPage(
+                        index,
+                        duration: const Duration(seconds: 1),
+                        curve: Curves.easeInOutCubicEmphasized,
+                      );
+                      controller.currentPage = index;
+                    },
+                    onHover: (isHovering) {
+                      controller.onHover(index, isHovering);
+                    },
+                    child: Stack(
+                      children: [
+                        AnimatedContainer(
+                          duration: const Duration(seconds: 1),
+                          curve: Curves.easeInOutCubicEmphasized,
+                          width: context.width *
+                              (controller.currentPage == index ? 0.2 : 0.1),
+                          height: context.width * 0.1,
+                          child: Image.asset(
+                            controller.projectItems[index].image!,
+                            fit: BoxFit.cover,
+                          ),
+                        ).paddingSymmetric(horizontal: 10),
+                        Visibility(
+                          visible: controller.currentPage == index
+                              ? true
+                              : controller.state.hoveringIndex == index,
+                          child: Container(
+                            width: context.width *
+                                (controller.currentPage == index ? 0.2 : 0.1),
+                            height: context.width * 0.1,
+                            color: (controller.currentPage == index
+                                    ? mainColor
+                                    : Colors.black)
+                                .withOpacity(0.5),
+                            child: Text(controller.projectItems[index].title!)
+                                .center(),
+                          ).paddingSymmetric(horizontal: 10),
+                        ),
+                      ],
+                    ),
+                  );
+                },
+              ),
+            ),
           ),
         ),
-        control: SwiperControl(
-          color: Get.theme.colorScheme.primary,
-        ),
-      ),
+        SizedBox(
+          height: context.height,
+          child: PageView.builder(
+            controller: controller.pageController,
+            itemCount: controller.projectItems.length,
+            itemBuilder: (context, index) {
+              return ProjectCard(
+                projectModel: controller.projectItems[index],
+              );
+            },
+          ),
+        ).marginSymmetric(horizontal: 15),
+      ],
     );
   }
 }

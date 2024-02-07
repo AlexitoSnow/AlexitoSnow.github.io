@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
+import 'package:snow_portfolio/config/config.dart';
 
 class ResponsiveFlex extends StatelessWidget {
   const ResponsiveFlex(
@@ -13,7 +13,7 @@ class ResponsiveFlex extends StatelessWidget {
   Widget build(BuildContext context) {
     final isPhone = context.width <= 800;
     return SizedBox(
-      height: Get.height,
+      height: context.height,
       child: Flex(
         mainAxisSize: MainAxisSize.max,
         mainAxisAlignment: mainAxisAlignment,

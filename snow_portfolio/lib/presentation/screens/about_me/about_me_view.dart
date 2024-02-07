@@ -1,35 +1,30 @@
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:lottie/lottie.dart';
-import 'package:animated_text_kit/animated_text_kit.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:snow_portfolio/config/config.dart';
-import 'package:snow_portfolio/presentation/controllers/controllers.dart';
+import 'package:snow_portfolio/presentation/bloc/bloc.dart';
+import 'gretting.dart';
 
-class AboutMeView extends GetView<AboutMeController> {
+class AboutMeView extends StatelessWidget {
   const AboutMeView({super.key});
   @override
   Widget build(BuildContext context) {
     isPhone = context.width <= 800;
+    final controller = context.watch<AboutMeCubit>();
     return ResponsiveFlex(
+      key: ValueKey(context.watch<HomeCubit>().state.currentLocale.toString()),
       children: [
-        Padding(
-          padding: const EdgeInsets.only(left: 8.0),
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              gretting,
-              name,
-              title,
-              presentation,
-              DevIconsList(
-                iconList: controller.softwareTechnologies,
-              ),
-            ],
-          ),
-        ),
+        Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            const Gretting(),
+            name(controller.name),
+            title(controller.title),
+            presentation(context),
+          ],
+        ).paddingOnly(left: 8.0),
         Expanded(
           flex: 7,
           child: LottieBuilder.network(
@@ -41,11 +36,11 @@ class AboutMeView extends GetView<AboutMeController> {
     );
   }
 
-  Widget get presentation {
+  Widget presentation(BuildContext context) {
+    final controller = context.watch<AboutMeCubit>();
     return SizedBox(
-      width: Get.width * (isPhone ? 0.8 : 0.5),
+      width: context.width * (isPhone ? 0.8 : 0.5),
       child: AutoSizeText(
-        key: Key(controller.presentation),
         controller.presentation,
         style: const TextStyle(
           fontSize: 15,
@@ -57,9 +52,9 @@ class AboutMeView extends GetView<AboutMeController> {
     );
   }
 
-  Text get title {
+  Text title(String title) {
     return Text(
-      controller.title,
+      title,
       style: const TextStyle(
         fontSize: 20,
         fontWeight: FontWeight.bold,
@@ -68,32 +63,14 @@ class AboutMeView extends GetView<AboutMeController> {
     );
   }
 
-  Text get name {
+  Text name(String name) {
     return Text(
-      controller.name,
+      name,
       style: const TextStyle(
         fontSize: 30,
         fontWeight: FontWeight.bold,
       ),
       textAlign: TextAlign.start,
-    );
-  }
-
-  Widget get gretting {
-    return AnimatedTextKit(
-      key: Key(controller.gretting),
-      isRepeatingAnimation: false,
-      animatedTexts: [
-        TypewriterAnimatedText(
-          controller.gretting,
-          textStyle: GoogleFonts.inconsolata(
-            textStyle: const TextStyle(
-              fontSize: 20,
-            ),
-          ),
-          speed: const Duration(milliseconds: 200),
-        ),
-      ],
     );
   }
 }

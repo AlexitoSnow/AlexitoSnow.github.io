@@ -1,6 +1,14 @@
+import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 
 extension WidgetExtensions on Widget {
+
+  Widget center() {
+    return Center(
+      child: this,
+    );
+  }
+
   Widget paddingAll(double padding) {
     return Padding(
       padding: EdgeInsets.all(padding),
@@ -68,4 +76,11 @@ extension WidgetExtensions on Widget {
       child: this,
     );
   }
+}
+
+extension EasyContext on BuildContext {
+  Size get mediaQuerySize => MediaQuery.of(this).size;
+  double get height => mediaQuerySize.height;
+  double get width => mediaQuerySize.width;
+  ThemeData get theme => Theme.of(this);
 }

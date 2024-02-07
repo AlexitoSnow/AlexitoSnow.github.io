@@ -1,6 +1,5 @@
 export 'routes/app_pages.dart';
 
-export 'utils/bindings_builders.dart';
 export 'utils/constants.dart';
 export 'utils/extensions.dart';
 

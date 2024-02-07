@@ -1,9 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
+import 'package:snow_portfolio/config/config.dart';
 import 'package:snow_portfolio/domain/models/activity_model.dart';
-import 'package:snow_portfolio/config/utils/constants.dart';
 
-class ActivityList extends GetView {
+class ActivityList extends StatelessWidget {
   final List<Activity> activities;
   const ActivityList(
     this.activities, {
@@ -13,9 +12,8 @@ class ActivityList extends GetView {
   @override
   Widget build(BuildContext context) {
     isPhone = context.width <= 800;
-    textScaleFactor = context.textScaleFactor;
     return SizedBox(
-      height: Get.height,
+      height: context.height,
       child: ListView(
         children: List.generate(
           activities.length,
