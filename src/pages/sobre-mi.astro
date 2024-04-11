@@ -1,0 +1,135 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+import ContactCTA from '../components/ContactCTA.astro';
+import Hero from '../components/Hero.astro';
+---
+
+<BaseLayout title="Sobre mí | Alexander Nieves" description="Conoce un poco sobre mí">
+	<div class="stack gap-20">
+		<main class="wrapper about">
+			<Hero
+				title="Sobre mí"
+				tagline="Te contaré un poco sobre mí y mi historia."
+			>
+				<img
+					width="1553"
+					height="873"
+					src="/assets/at-work.jpeg"
+					alt="Alexander en el cambio de directiva IEEE ESPOL 2024"
+				/>
+			</Hero>
+
+			<section>
+				<h2 class="section-title">Resumen</h2>
+				<div class="content">
+					<p>
+						Soy una persona que se enfoca en aprender sobre las cosas que verdaderamente
+						me apasionan. Me gusta ayudar a las personas y participar en comunidades.
+					</p>
+					<p>
+						Cuando tuve la oportunidad de ser vicepresidente del capítulo estudiantil
+						<strong>Computer Society IEEE ESPOL</strong> pude aprender mucho sobre el trabajo
+						en equipo, liderar las masas y, principalmente, aprender a escuchar a los demás.
+					</p>
+					<p>
+						Puedo reconocer mis límites cuando algo me supera, pero siempre busco la manera
+						de superarlos. Me gusta aprender cosas nuevas y aplicarlas en mi día a día.
+					</p>
+					<p>
+						Recientemente, he emprendido como creador de contenido en mi cuenta
+						<a href="https://www.instagram.com/snow.dev" target="_blank" rel="noopener noreferrer">Snow.dev</a>, donde comparto
+						mis conocimientos y aprendizajes en el mundo de la programación, con un enfoque
+						principal en <strong>Flutter</strong> y <strong>Java</strong>.
+					</p>
+				</div>
+			</section>
+			<section>
+				<h2 class="section-title">Educación</h2>
+				<div class="content">
+					<p>Estudiante de Ingeniería en Computación en ESPOL.</p>
+				</div>
+			</section>
+			<section>
+				<h2 class="section-title">Habilidades Blandas</h2>
+				<div class="content">
+					<p>Aprendizaje Rápido</p>
+					<p>Responsabilidad</p>
+					<p>Orientado a Objetivos</p>
+					<p>Trabajo en Equipo</p>
+					<p>Adaptabilidad</p>
+					<p>Comunicación</p>
+				</div>
+			</section>
+			<section>
+				<h2 class="section-title">Conocimientos</h2>
+				<div class="content">
+					<p><img src="https://skillicons.dev/icons?i=git,github,figma" /></p>
+					<p><img src="https://skillicons.dev/icons?i=mysql,firebase,postgresql" /></p>
+					<p><img src="https://skillicons.dev/icons?i=java,dart,javascript" /></p>
+					<p><img src="https://skillicons.dev/icons?i=flutter,react,nextjs,astro,angular" /></p>
+				</div>
+			</section>
+		</main>
+
+		<ContactCTA />
+	</div>
+</BaseLayout>
+
+<style>
+	.about {
+		display: flex;
+		flex-direction: column;
+		gap: 3.5rem;
+	}
+
+	img {
+		margin-top: 1.5rem;
+		border-radius: 1.5rem;
+		box-shadow: var(--shadow-md);
+	}
+
+	section {
+		display: flex;
+		flex-direction: column;
+		gap: 0.5rem;
+		color: var(--gray-200);
+	}
+
+	.section-title {
+		grid-column-start: 1;
+		font-size: var(--text-xl);
+		color: var(--gray-0);
+	}
+
+	.content {
+		grid-column: 2 / 4;
+	}
+
+	.content :global(a) {
+		text-decoration: 1px solid underline transparent;
+		text-underline-offset: 0.25em;
+		transition: text-decoration-color var(--theme-transition);
+	}
+
+	.content :global(a:hover),
+	.content :global(a:focus) {
+		text-decoration-color: currentColor;
+	}
+
+	@media (min-width: 50em) {
+		.about {
+			display: grid;
+			grid-template-columns: 1fr 60% 1fr;
+		}
+
+		.about > :global(:first-child) {
+			grid-column-start: 2;
+		}
+
+		section {
+			display: contents;
+			font-size: var(--text-lg);
+		}
+	}
+</style>
